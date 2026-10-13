@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zaza Blush & Bows | Nightwear & Waist Beads</title>
+  <meta name="description" content="Zaza Blush & Bows – beautiful nightwear, waist beads and feminine essentials. A little blush, lots of pretty. Scent, Slay, Seduce." />
+  <meta name="theme-color" content="#f7d4d9" />
+  <meta property="og:title" content="Zaza Blush & Bows" />
+  <meta property="og:description" content="A Little Blush, Lots of Pretty. Nightwear, waist beads & feminine essentials." />
+  <meta property="og:image" content="images/1.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎀</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-----------<link rel="stylesheet" href="style.css" />-------->
+  <style>
+    /* =========================================================
+   Zaza Blush & Bows – Landing page styles
+   Palette: blush pink · cream · rose gold
+   ========================================================= */
+:root {
+  --blush: #f7d4d9;
+  --blush-deep: #f0b3bf;
+  --blush-soft: #fdeef0;
+  --cream: #fff8f1;
+  --cream-2: #fbeee3;
+  --rose: #b76e79;
+  --rose-dark: #8f4a57;
+  --ink: #4a2c33;
+  --muted: #8a6a70;
+  --gold: linear-gradient(135deg, #e9b9a3 0%, #b76e79 45%, #f2d0bd 72%, #b76e79 100%);
+  --shadow: 0 18px 50px -18px rgba(183, 110, 121, .45);
+  --radius: 22px;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Poppins", system-ui, sans-serif;
+  --script: "Great Vibes", cursive;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+em { font-style: italic; color: var(--rose); }
+:focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; border-radius: 6px; }
+
+h1, h2, h3 { font-family: var(--serif); line-height: 1.1; font-weight: 600; }
+h1 { font-size: clamp(2.5rem, 5.4vw, 4.6rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+h3 { font-size: 1.6rem; }
+
+.script { font-family: var(--script); font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--rose); line-height: 1.2; }
+.eyebrow { text-transform: uppercase; letter-spacing: .28em; font-size: .75rem; font-weight: 500; color: var(--rose); margin-bottom: .6rem; }
+.muted { color: var(--muted); font-size: .95rem; }
+
+.shine {
+  background: var(--gold); background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shine 5s linear infinite; font-style: italic;
+}
+@keyframes shine { to { background-position: -220% 0; } }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .95rem 1.8rem; border-radius: 999px; border: 1.5px solid transparent;
+  background: var(--gold); background-size: 200% 100%; color: #fff;
+  font-weight: 500; font-size: .95rem; letter-spacing: .02em; cursor: pointer;
+  box-shadow: var(--shadow); transition: transform .3s, background-position .6s, box-shadow .3s;
+}
+.btn:hover { transform: translateY(-3px); background-position: 100% 0; box-shadow: 0 22px 40px -16px rgba(183,110,121,.7); }
+.btn--small { padding: .6rem 1.2rem; font-size: .85rem; }
+.btn--big { padding: 1.15rem 2.4rem; font-size: 1.05rem; }
+.btn--ghost { background: transparent; color: var(--rose-dark); border-color: var(--rose); box-shadow: none; }
+.btn--ghost:hover { background: var(--blush-soft); }
+.btn--light { background: var(--cream); color: var(--rose-dark); }
+.link { color: var(--rose-dark); font-weight: 500; border-bottom: 1.5px solid var(--blush-deep); transition: border-color .3s, letter-spacing .3s; }
+.link:hover { border-color: var(--rose); letter-spacing: .03em; }
+
+/* ---------- Nav ---------- */
+.nav {
+  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem clamp(1rem, 5vw, 4rem);
+  transition: background .35s, box-shadow .35s, padding .35s;
+}
+.nav.scrolled { background: rgba(255, 248, 241, .88); backdrop-filter: blur(14px); box-shadow: 0 6px 30px -12px rgba(183,110,121,.35); padding-block: .65rem; }
+.brand { display: flex; align-items: center; gap: .55rem; }
+.brand__bow { font-size: 1.5rem; display: inline-block; animation: sway 3.5s ease-in-out infinite; }
+.brand__text { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; }
+@keyframes sway { 50% { transform: rotate(12deg) scale(1.08); } }
+.nav__links { display: flex; align-items: center; gap: 1.8rem; font-size: .92rem; }
+.nav__links a:not(.btn) { position: relative; }
+.nav__links a:not(.btn)::after {
+  content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: var(--gold); transition: width .3s;
+}
+.nav__links a:not(.btn):hover::after { width: 100%; }
+.nav__toggle { display: none; background: none; border: 0; width: 42px; height: 42px; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 6px; }
+.nav__toggle span { width: 24px; height: 2px; background: var(--rose-dark); border-radius: 2px; transition: transform .3s, opacity .3s; }
+.nav__toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav__toggle.open span:nth-child(2) { opacity: 0; }
+.nav__toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; min-height: 100svh;
+  display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: clamp(2rem, 5vw, 5rem);
+  padding: 7.5rem clamp(1rem, 5vw, 4rem) 4rem;
+  background:
+    radial-gradient(60% 50% at 85% 15%, rgba(240,179,191,.55), transparent 70%),
+    radial-gradient(50% 45% at 5% 90%, rgba(233,185,163,.4), transparent 70%),
+    linear-gradient(180deg, var(--blush-soft), var(--cream));
+  overflow: hidden;
+}
+.hero__text h1 { margin: .4rem 0 1.2rem; }
+.hero__lead { max-width: 34rem; color: var(--muted); font-size: 1.05rem; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0 1.6rem; }
+.hero__badges { display: flex; flex-wrap: wrap; gap: .6rem 1.6rem; font-size: .8rem; letter-spacing: .25em; text-transform: uppercase; color: var(--rose); }
+.hero__visual { position: relative; z-index: 2; }
+.hero__tag {
+  position: absolute; left: -1.2rem; bottom: 6.5rem; background: var(--cream); padding: .7rem 1.1rem; border-radius: 999px;
+  box-shadow: var(--shadow); font-size: .85rem; display: flex; align-items: center; gap: .6rem; animation: float 4s ease-in-out infinite;
+}
+.hero__tag span { background: var(--gold); color: #fff; padding: .15rem .6rem; border-radius: 999px; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+@keyframes float { 50% { transform: translateY(-10px); } }
+
+/* Falling petals */
+.petals { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+.petal {
+  position: absolute; top: -40px; width: var(--s); height: calc(var(--s) * 1.3);
+  background: radial-gradient(circle at 30% 30%, #fff 0%, var(--blush-deep) 70%);
+  border-radius: 80% 0 80% 0; opacity: .65;
+  animation: fall var(--t) linear var(--dl) infinite;
+}
+@keyframes fall {
+  0% { transform: translate3d(0,-40px,0) rotate(0); }
+  50% { transform: translate3d(var(--x),55vh,0) rotate(180deg); }
+  100% { transform: translate3d(calc(var(--x) * -.5),115vh,0) rotate(360deg); }
+}
+
+/* ---------- Slider ---------- */
+.slider { max-width: 520px; margin-inline: auto; }
+.slider__frame {
+  position: relative; aspect-ratio: 4 / 5; overflow: hidden;
+  border-radius: 999px 999px var(--radius) var(--radius);
+  border: 6px solid var(--cream); outline: 2px solid transparent;
+  box-shadow: var(--shadow), 0 0 0 2px rgba(183,110,121,.35);
+  background: var(--blush);
+}
+.slider__track { position: absolute; inset: 0; }
+.slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease, transform 1.2s ease; transform: scale(1.06); }
+.slide.active { opacity: 1; transform: scale(1); z-index: 1; }
+.slide img { width: 100%; height: 100%; object-fit: cover; }
+.slide.active img { animation: kenburns 9s ease-out forwards; }
+@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.12); } }
+.slider__shade { position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(180deg, transparent 55%, rgba(74,44,51,.45)); }
+
+.slider__btn {
+  position: absolute; top: 50%; z-index: 4; transform: translateY(-50%);
+  width: 46px; height: 46px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(255,248,241,.85); color: var(--rose-dark); font-size: 1.8rem; line-height: 1;
+  display: grid; place-items: center; box-shadow: 0 8px 20px -8px rgba(0,0,0,.4);
+  transition: background .3s, transform .3s;
+}
+.slider__btn:hover { background: #fff; transform: translateY(-50%) scale(1.1); }
+.slider__btn--prev { left: .8rem; }
+.slider__btn--next { right: .8rem; }
+.slider__meta {
+  position: absolute; z-index: 4; left: 0; right: 0; bottom: 1.4rem; padding-inline: 1.6rem;
+  display: flex; justify-content: space-between; align-items: center; color: #fff; font-family: var(--serif); font-size: 1.2rem;
+}
+.slider__count b { font-size: 1.9rem; font-weight: 600; }
+.slider__play { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.8); background: transparent; color: #fff; font-size: .65rem; cursor: pointer; transition: background .3s; }
+.slider__play:hover { background: rgba(255,255,255,.25); }
+.slider__progress { position: absolute; z-index: 4; left: 0; right: 0; bottom: 0; height: 4px; background: rgba(255,255,255,.3); }
+.slider__progress i { display: block; height: 100%; width: 0; background: var(--gold); }
+.slider__progress i.run { animation: progress var(--dur, 4.5s) linear forwards; }
+.slider__progress i.paused { animation-play-state: paused; }
+@keyframes progress { to { width: 100%; } }
+
+.slider__thumbs { display: flex; gap: .55rem; margin-top: 1rem; overflow-x: auto; padding: .4rem .2rem .8rem; scrollbar-width: thin; scrollbar-color: var(--blush-deep) transparent; scroll-snap-type: x proximity; }
+.thumb { flex: 0 0 54px; height: 54px; border-radius: 50%; overflow: hidden; border: 2.5px solid transparent; padding: 0; cursor: pointer; background: var(--blush); opacity: .6; transition: opacity .3s, transform .3s, border-color .3s; scroll-snap-align: center; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumb:hover { opacity: 1; transform: translateY(-3px); }
+.thumb.active { opacity: 1; border-color: var(--rose); transform: scale(1.12); }
+
+/* Missing image fallback (until real photos are added) */
+.img-missing { background: linear-gradient(135deg, var(--blush) 0%, var(--cream-2) 50%, var(--blush-deep) 100%); position: relative; }
+.img-missing::after { content: "🎀"; position: absolute; inset: 0; display: grid; place-items: center; font-size: 2rem; opacity: .55; }
+.slide.img-missing::after { font-size: 4rem; }
+
+/* ---------- Marquee ---------- */
+.marquee { background: var(--gold); color: #fff; overflow: hidden; padding: .9rem 0; white-space: nowrap; }
+.marquee__inner { display: inline-flex; animation: marquee 28s linear infinite; font-family: var(--serif); font-size: 1.3rem; letter-spacing: .08em; }
+.marquee__inner span { padding-right: 1.5rem; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------- Sections ---------- */
+.section { padding: clamp(4rem, 9vw, 7.5rem) clamp(1rem, 5vw, 4rem); }
+.section__head { text-align: center; max-width: 40rem; margin: 0 auto 3.2rem; }
+.section__head p:not(.eyebrow) { color: var(--muted); margin-top: .8rem; }
+
+/* About */
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; max-width: 1200px; margin: 0 auto; }
+.about__img { position: relative; padding: 0 2rem 3rem 0; }
+.arch { border-radius: 999px 999px 24px 24px; overflow: hidden; aspect-ratio: 4/5; background: var(--blush); box-shadow: var(--shadow); }
+.arch img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s; }
+.arch:hover img { transform: scale(1.07); }
+.arch--small { position: absolute; right: 0; bottom: 0; width: 46%; border: 6px solid var(--cream); }
+.spark { position: absolute; color: var(--rose); animation: twinkle 2.6s ease-in-out infinite; }
+.spark--1 { top: 8%; right: 6%; font-size: 1.8rem; }
+.spark--2 { top: 48%; left: -1rem; font-size: 1.1rem; animation-delay: 1.2s; }
+@keyframes twinkle { 50% { transform: scale(1.6) rotate(25deg); opacity: .4; } }
+.about__text h2 { margin-bottom: 1.2rem; }
+.about__text p { color: var(--muted); margin-bottom: 1rem; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; padding-top: 1.8rem; border-top: 1px solid var(--blush-deep); }
+.stats b { display: block; font-family: var(--serif); font-size: 2.4rem; color: var(--rose); line-height: 1; }
+.stats span { font-size: .8rem; color: var(--muted); }
+
+/* Collections */
+.collections { background: linear-gradient(180deg, var(--cream), var(--blush-soft)); }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; max-width: 1200px; margin: 0 auto; }
+.card { background: var(--cream); border-radius: var(--radius); overflow: hidden; box-shadow: 0 10px 40px -20px rgba(183,110,121,.5); transition: transform .45s, box-shadow .45s; }
+.card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
+.card__img { aspect-ratio: 4/4.6; overflow: hidden; background: var(--blush); }
+.card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s; }
+.card:hover .card__img img { transform: scale(1.09); }
+.card__body { padding: 1.6rem; }
+.card__body h3 { margin-bottom: .5rem; }
+.card__body p { color: var(--muted); font-size: .93rem; margin-bottom: 1.1rem; }
+
+/* Gallery (masonry) */
+.gallery { max-width: 1250px; margin: 0 auto; columns: 4 220px; column-gap: 1rem; }
+.gallery__item { position: relative; margin-bottom: 1rem; border-radius: 18px; overflow: hidden; break-inside: avoid; cursor: zoom-in; background: var(--blush); border: 0; padding: 0; display: block; width: 100%; }
+.gallery__item img { width: 100%; height: auto; transition: transform .8s; }
+.gallery__item:nth-child(3n+1) { aspect-ratio: 3/4; }
+.gallery__item:nth-child(3n+2) { aspect-ratio: 1/1; }
+.gallery__item:nth-child(3n) { aspect-ratio: 4/5; }
+.gallery__item img { height: 100%; object-fit: cover; }
+.gallery__item::before { content: "+"; position: absolute; z-index: 2; inset: auto 1rem 1rem auto; width: 40px; height: 40px; border-radius: 50%; background: var(--cream); color: var(--rose-dark); display: grid; place-items: center; font-size: 1.4rem; transform: scale(0); transition: transform .35s; }
+.gallery__item::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(143,74,87,.5)); opacity: 0; transition: opacity .4s; }
+.gallery__item:hover img { transform: scale(1.1); }
+.gallery__item:hover::after { opacity: 1; }
+.gallery__item:hover::before { transform: scale(1); }
+
+/* Why */
+.why { background: var(--blush-soft); }
+.features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; max-width: 1200px; margin: 0 auto; }
+.feature { text-align: center; background: var(--cream); padding: 2.2rem 1.4rem; border-radius: var(--radius); border: 1px solid rgba(240,179,191,.6); transition: transform .4s, box-shadow .4s, border-color .4s; }
+.feature:hover { transform: translateY(-8px); box-shadow: var(--shadow); border-color: var(--rose); }
+.feature__icon { display: grid; place-items: center; width: 68px; height: 68px; margin: 0 auto 1rem; font-size: 1.8rem; border-radius: 50%; background: var(--blush); transition: transform .5s; }
+.feature:hover .feature__icon { transform: rotate(360deg) scale(1.1); }
+.feature h3 { font-size: 1.4rem; margin-bottom: .4rem; }
+.feature p { color: var(--muted); font-size: .9rem; }
+
+/* Banner */
+.banner { text-align: center; padding: clamp(4rem, 9vw, 7rem) 1.5rem; background: var(--gold); background-size: 250% 250%; animation: gradMove 12s ease infinite; color: #fff; position: relative; overflow: hidden; }
+.banner .script { color: #fff; }
+.banner h2 { margin: .4rem auto 1.8rem; max-width: 36rem; }
+.banner em { color: var(--cream); }
+@keyframes gradMove { 50% { background-position: 100% 100%; } }
+
+/* Order */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto 3rem; counter-reset: s; }
+.steps li { text-align: center; padding: 0 1rem; position: relative; }
+.steps li span { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 1rem; border-radius: 50%; background: var(--gold); color: #fff; font-family: var(--serif); font-size: 1.8rem; box-shadow: var(--shadow); }
+.steps li:not(:last-child)::after { content: ""; position: absolute; top: 32px; left: calc(50% + 50px); width: calc(100% - 100px); border-top: 2px dashed var(--blush-deep); }
+.steps h3 { font-size: 1.4rem; margin-bottom: .3rem; }
+.steps p { color: var(--muted); font-size: .92rem; }
+.order__cta { text-align: center; }
+.order__cta .muted { margin-top: .8rem; }
+
+/* Footer */
+.footer { background: var(--ink); color: var(--blush); padding: 4rem clamp(1rem, 5vw, 4rem) 6rem; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; }
+.footer h3 { color: var(--cream); font-size: 1.8rem; }
+.footer em { color: var(--blush-deep); }
+.footer__brand .brand__bow { font-size: 1.8rem; }
+.footer__links { display: flex; flex-direction: column; gap: .5rem; }
+.footer a:hover { color: #fff; }
+.footer__contact p { margin-top: .5rem; letter-spacing: .2em; font-size: .78rem; text-transform: uppercase; color: var(--blush-deep); }
+.footer__copy { grid-column: 1 / -1; border-top: 1px solid rgba(247,212,217,.2); padding-top: 1.5rem; font-size: .82rem; opacity: .8; text-align: center; }
+
+/* Floating WhatsApp */
+.wa-float { position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--gold); color: #fff; display: grid; place-items: center; box-shadow: var(--shadow); transition: transform .3s; }
+.wa-float::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--rose); animation: ping 2.2s ease-out infinite; }
+.wa-float:hover { transform: scale(1.1) rotate(-6deg); }
+@keyframes ping { to { transform: scale(1.7); opacity: 0; } }
+
+/* Lightbox */
+.lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(74,44,51,.94); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity .35s, visibility .35s; padding: 1rem; }
+.lightbox.open { opacity: 1; visibility: visible; }
+.lightbox figure { text-align: center; max-width: min(90vw, 760px); }
+.lightbox img { max-height: 78vh; width: auto; margin: 0 auto; border-radius: 16px; box-shadow: 0 30px 80px -20px #000; transform: scale(.94); transition: transform .4s; background: var(--blush); min-width: 220px; min-height: 280px; object-fit: contain; }
+.lightbox.open img { transform: scale(1); }
+.lightbox figcaption { color: var(--blush); margin-top: 1rem; font-size: .9rem; }
+.lightbox figcaption a { text-decoration: underline; text-underline-offset: 3px; }
+.lightbox__close, .lightbox__nav { position: absolute; background: rgba(255,248,241,.14); color: #fff; border: 0; border-radius: 50%; cursor: pointer; transition: background .3s; display: grid; place-items: center; }
+.lightbox__close:hover, .lightbox__nav:hover { background: rgba(255,248,241,.3); }
+.lightbox__close { top: 1.2rem; right: 1.2rem; width: 44px; height: 44px; font-size: 1.1rem; }
+.lightbox__nav { top: 50%; transform: translateY(-50%); width: 52px; height: 52px; font-size: 2rem; }
+.lightbox__nav--prev { left: 1rem; }
+.lightbox__nav--next { right: 1rem; }
+
+/* ---------- Scroll reveal ---------- */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity .9s cubic-bezier(.2,.7,.2,1) var(--d, 0s), transform .9s cubic-bezier(.2,.7,.2,1) var(--d, 0s); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; text-align: center; padding-top: 6.5rem; }
+  .hero__lead { margin-inline: auto; }
+  .hero__cta, .hero__badges { justify-content: center; }
+  .hero__tag { left: 0; }
+  .about { grid-template-columns: 1fr; }
+  .about__img { max-width: 440px; margin-inline: auto; }
+  .cards { grid-template-columns: 1fr; max-width: 460px; }
+  .features { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: 1fr; }
+  .steps li:not(:last-child)::after { display: none; }
+  .footer { grid-template-columns: 1fr; text-align: center; }
+  .footer__links { align-items: center; }
+  .nav__toggle { display: flex; }
+  .nav__links {
+    position: fixed; inset: 0 0 0 auto; width: min(80vw, 320px); flex-direction: column; justify-content: center; gap: 1.6rem;
+    background: var(--cream); box-shadow: -20px 0 60px -20px rgba(74,44,51,.4); font-size: 1.15rem;
+    transform: translateX(105%); transition: transform .45s cubic-bezier(.2,.7,.2,1);
+  }
+  .nav__links.open { transform: none; }
+  .nav__toggle { position: relative; z-index: 2; }
+  .gallery { columns: 3 150px; }
+}
+@media (max-width: 560px) {
+  .features { grid-template-columns: 1fr; }
+  .gallery { columns: 2 140px; column-gap: .7rem; }
+  .gallery__item { margin-bottom: .7rem; }
+  .stats b { font-size: 2rem; }
+  .brand__text { font-size: 1.25rem; }
+  .slider__btn { width: 40px; height: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001s !important; animation-iteration-count: 1 !important; transition-duration: .001s !important; }
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+
+
+/* ---------- Mobile navigation and small-screen hardening ---------- */
+.nav { min-width: 0; }
+.brand { min-width: 0; }
+.brand__text { min-width: 0; }
+.nav__toggle { flex: 0 0 42px; }
+@media (max-width: 960px) {
+  .nav { padding-inline: 1rem; }
+  .nav__links {
+    z-index: 60;
+    width: min(86vw, 360px);
+    max-width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 5.5rem 1.5rem 2rem;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: .35rem;
+    transform: translateX(110%);
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .nav__links.open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .nav__links a:not(.btn) {
+    display: block;
+    width: 100%;
+    padding: .8rem .5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(183,110,121,.14);
+  }
+  .nav__links .btn { width: 100%; margin-top: .8rem; white-space: normal; }
+  .nav__toggle { z-index: 70; flex-shrink: 0; }
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 2rem; padding-inline: 1.1rem; }
+  .hero__text, .hero__visual, .about__text, .about__img { min-width: 0; }
+  .hero__visual { width: 100%; }
+  .slider { width: 100%; max-width: min(520px, 100%); }
+  .slider__thumbs { max-width: 100%; }
+  .section { padding-inline: 1.1rem; }
+  .footer { padding-inline: 1.1rem; }
+}
+@media (max-width: 560px) {
+  html { scroll-padding-top: 72px; }
+  .nav { padding: .75rem .85rem; }
+  .nav.scrolled { padding-block: .55rem; }
+  .brand { gap: .35rem; }
+  .brand__bow { font-size: 1.25rem; }
+  .brand__text { font-size: clamp(1rem, 4.4vw, 1.2rem); }
+  .nav__toggle { width: 40px; height: 40px; }
+  .hero { padding-top: 6.2rem; }
+  .hero h1 { font-size: clamp(2.1rem, 9vw, 3rem); overflow-wrap: anywhere; }
+  .hero__lead { font-size: .92rem; }
+  .hero__cta { flex-wrap: wrap; gap: .75rem; }
+  .hero__cta .btn { max-width: 100%; padding: .8rem 1.1rem; font-size: .86rem; }
+  .hero__badges { flex-wrap: wrap; gap: .5rem 1rem; }
+  .slider__frame { border-width: 4px; border-radius: 42% 42% 18px 18px; }
+  .slider__btn { width: 38px; height: 38px; }
+  .slider__btn--prev { left: .45rem; }
+  .slider__btn--next { right: .45rem; }
+  .slider__meta { bottom: .8rem; padding-inline: 1rem; }
+  .thumb { flex-basis: 46px; height: 46px; }
+  .gallery { columns: 2; column-gap: .55rem; }
+  .gallery__item { border-radius: 12px; margin-bottom: .55rem; }
+  .lightbox { padding: .65rem; }
+  .lightbox img { max-width: calc(100vw - 2rem); max-height: 72vh; min-width: 0; min-height: 0; }
+  .lightbox__nav { width: 42px; height: 42px; font-size: 1.6rem; }
+  .lightbox__nav--prev { left: .4rem; }
+  .lightbox__nav--next { right: .4rem; }
+  .lightbox__close { top: .6rem; right: .6rem; }
+  .steps { gap: 1.5rem; }
+}
+@media (max-width: 360px) {
+  .brand__text { font-size: .95rem; }
+  .hero__cta { flex-direction: column; align-items: stretch; }
+  .hero__cta .btn { width: 100%; }
+  .features { grid-template-columns: minmax(0, 1fr); }
+  .gallery { columns: 1; }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <header class="nav" id="nav">
+    <a href="#home" class="brand" aria-label="Zaza Blush & Bows home">
+      <span class="brand__bow">🎀</span>
+      <span class="brand__text">Zaza <em>Blush & Bows</em></span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#collections">Collections</a>
+      <a href="#lookbook">Lookbook</a>
+      <a href="#why">Why Zaza</a>
+      <a href="#order">How to Order</a>
+      <a href="#" class="btn btn--small js-wa">Shop on WhatsApp</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="petals" id="petals" aria-hidden="true"></div>
+
+    <div class="hero__text">
+      <p class="script reveal">A Little Blush, Lots of Pretty</p>
+      <h1 class="reveal" style="--d:.1s">Nightwear &amp; waist beads for the <span class="shine">girl who glows.</span></h1>
+      <p class="hero__lead reveal" style="--d:.2s">
+        Pretty finds, affordable luxury and a touch of femininity in every piece – made to help you feel confident, soft and unforgettable.
+      </p>
+      <div class="hero__cta reveal" style="--d:.3s">
+        <a href="#" class="btn js-wa">Order on WhatsApp</a>
+        <a href="#lookbook" class="btn btn--ghost">View Lookbook</a>
+      </div>
+      <ul class="hero__badges reveal" style="--d:.4s">
+        <li>✦ Scent</li><li>✦ Slay</li><li>✦ Seduce</li>
+      </ul>
+    </div>
+
+    <div class="hero__visual reveal" style="--d:.2s">
+      <div class="slider" id="slider" tabindex="0" aria-roledescription="carousel" aria-label="Zaza Blush & Bows photo slider">
+        <div class="slider__frame">
+          <div class="slider__track" id="sliderTrack"></div>
+          <div class="slider__shade"></div>
+          <button class="slider__btn slider__btn--prev" id="prev" aria-label="Previous image">‹</button>
+          <button class="slider__btn slider__btn--next" id="next" aria-label="Next image">›</button>
+          <div class="slider__meta">
+            <span class="slider__count"><b id="curNum">01</b> / <span id="totNum">17</span></span>
+            <button class="slider__play" id="playBtn" aria-label="Pause slideshow">❚❚</button>
+          </div>
+          <div class="slider__progress"><i id="progress"></i></div>
+        </div>
+        <div class="slider__thumbs" id="thumbs" role="tablist" aria-label="Slide thumbnails"></div>
+      </div>
+      <div class="hero__tag"><span>New</span> Pretty drops weekly</div>
+    </div>
+  </section>
+
+  <!-- ========== MARQUEE ========== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__inner">
+      <span>Scent ✦ Slay ✦ Seduce ✦ A Little Blush, Lots of Pretty ✦ Nightwear ✦ Waist Beads ✦ Feminine Essentials ✦ </span>
+      <span>Scent ✦ Slay ✦ Seduce ✦ A Little Blush, Lots of Pretty ✦ Nightwear ✦ Waist Beads ✦ Feminine Essentials ✦ </span>
+    </div>
+  </div>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section about" id="about">
+    <div class="about__img reveal">
+      <div class="arch"><img src="images/5.jpeg" alt="Zaza Blush & Bows nightwear" loading="lazy" /></div>
+      <div class="arch arch--small"><img src="images/15.jpeg" alt="Zaza waist beads" loading="lazy" /></div>
+      <span class="spark spark--1">✦</span><span class="spark spark--2">✦</span>
+    </div>
+    <div class="about__text">
+      <p class="eyebrow reveal">Our Story</p>
+      <h2 class="reveal" style="--d:.1s">Feeling pretty is a <em>lifestyle.</em></h2>
+      <p class="reveal" style="--d:.15s">
+        Zaza Blush &amp; Bows is a feminine lifestyle brand created for girls and women who love feeling pretty, confident and effortlessly attractive. We offer beautiful nightwear, waist beads and other lovely feminine essentials to help you embrace your beauty and express your personal style.
+      </p>
+      <p class="reveal" style="--d:.2s">
+        Our goal is simple: pretty finds, affordable luxury and a touch of femininity in every purchase. Every girl deserves to feel beautiful, confident and special.
+      </p>
+      <div class="stats reveal" style="--d:.25s">
+        <div><b data-count="19" data-suffix="+">0</b><span>Pretty styles</span></div>
+        <div><b data-count="100" data-suffix="%">0</b><span>Feminine love</span></div>
+        <div><b data-count="24" data-suffix="/7">0</b><span>WhatsApp orders</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COLLECTIONS ========== -->
+  <section class="section collections" id="collections">
+    <div class="section__head">
+      <p class="eyebrow reveal">Shop the Pretty</p>
+      <h2 class="reveal" style="--d:.1s">Our <em>collections</em></h2>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card__img"><img src="images/2.jpeg" alt="Nightwear" loading="lazy" /></div>
+        <div class="card__body">
+          <h3>Nightwear</h3>
+          <p>Silky sets, satin slips and cute sleepwear that make bedtime feel like a date with yourself.</p>
+          <a href="#" class="link js-wa" data-msg="Hi Zaza Blush & Bows! I'd like to see your nightwear collection 🎀">Order nightwear →</a>
+        </div>
+      </article>
+      <article class="card reveal" style="--d:.12s">
+        <div class="card__img"><img src="images/17.jpeg" alt="Waist beads" loading="lazy" /></div>
+        <div class="card__body">
+          <h3>Waist Beads</h3>
+          <p>Handcrafted, colourful and confidence-boosting beads that celebrate your curves.</p>
+          <a href="#" class="link js-wa" data-msg="Hi Zaza Blush & Bows! I'd like to see your waist beads ✨">Order waist beads →</a>
+        </div>
+      </article>
+      <article class="card reveal" style="--d:.24s">
+        <div class="card__img"><img src="images/12.jpeg" alt="Feminine essentials" loading="lazy" /></div>
+        <div class="card__body">
+          <h3>Feminine Essentials</h3>
+          <p>Lovely little extras – bows, scents and more – to finish every look with a blush of pretty.</p>
+          <a href="#" class="link js-wa" data-msg="Hi Zaza Blush & Bows! I'd like to see your feminine essentials 💕">Order essentials →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== LOOKBOOK ========== -->
+  <section class="section lookbook" id="lookbook">
+    <div class="section__head">
+      <p class="eyebrow reveal">The Lookbook</p>
+      <h2 class="reveal" style="--d:.1s">Pretty finds, <em>all in one place</em></h2>
+      <p class="reveal" style="--d:.15s">Tap any photo to view it bigger. Love something? Send it to us on WhatsApp.</p>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <!-- ========== WHY ========== -->
+  <section class="section why" id="why">
+    <div class="section__head">
+      <p class="eyebrow reveal">Why Zaza</p>
+      <h2 class="reveal" style="--d:.1s">Little details, <em>big feelings</em></h2>
+    </div>
+    <div class="features">
+      <div class="feature reveal"><span class="feature__icon">💎</span><h3>Affordable Luxury</h3><p>Pieces that look and feel premium without the premium price tag.</p></div>
+      <div class="feature reveal" style="--d:.1s"><span class="feature__icon">🎀</span><h3>Pretty Finds</h3><p>Carefully picked designs that are soft, feminine and totally you.</p></div>
+      <div class="feature reveal" style="--d:.2s"><span class="feature__icon">✨</span><h3>Confidence First</h3><p>Everything we sell is made to help you feel beautiful and special.</p></div>
+      <div class="feature reveal" style="--d:.3s"><span class="feature__icon">💬</span><h3>Easy Ordering</h3><p>Chat with us on WhatsApp – quick replies, simple and personal.</p></div>
+    </div>
+  </section>
+
+  <!-- ========== BANNER ========== -->
+  <section class="banner">
+    <p class="script reveal">Scent, Slay, Seduce</p>
+    <h2 class="reveal" style="--d:.1s">Be the girl everyone <em>remembers.</em></h2>
+    <a href="#" class="btn btn--light js-wa reveal" style="--d:.2s">Start your order</a>
+  </section>
+
+  <!-- ========== ORDER ========== -->
+  <section class="section order" id="order">
+    <div class="section__head">
+      <p class="eyebrow reveal">How to Order</p>
+      <h2 class="reveal" style="--d:.1s">Three <em>easy</em> steps</h2>
+    </div>
+    <ol class="steps">
+      <li class="reveal"><span>1</span><h3>Pick your pretty</h3><p>Browse the lookbook and choose your favourite pieces.</p></li>
+      <li class="reveal" style="--d:.12s"><span>2</span><h3>Message us</h3><p>Tap the WhatsApp button and tell us what you love, your size and colour.</p></li>
+      <li class="reveal" style="--d:.24s"><span>3</span><h3>Glow &amp; enjoy</h3><p>We confirm, you pay and we get your order to you. Easy.</p></li>
+    </ol>
+    <div class="order__cta reveal">
+      <a href="#" class="btn btn--big js-wa">Chat with us on WhatsApp</a>
+      <p class="muted">+234 810 135 4192</p>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="brand__bow">🎀</span>
+      <h3>Zaza <em>Blush & Bows</em></h3>
+      <p>A Little Blush, Lots of Pretty.</p>
+    </div>
+    <div class="footer__links">
+      <a href="#about">About</a>
+      <a href="#collections">Collections</a>
+      <a href="#lookbook">Lookbook</a>
+      <a href="#order">How to Order</a>
+    </div>
+    <div class="footer__contact">
+      <a href="#" class="js-wa">WhatsApp: +234 810 135 4192</a>
+      <p>Scent ✦ Slay ✦ Seduce</p>
+    </div>
+    <p class="footer__copy">© <span id="year"></span> Zaza Blush & Bows. All rights reserved.</p>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="#" class="wa-float js-wa" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M19.1 17.3c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.200 3c.1.2 2 3.100 4.900 4.300.7.3 1.200.5 1.600.6.7.2 1.300.2 1.800.1.500-.1 1.800-.7 2-1.400.3-.7.3-1.300.2-1.400-.1-.1-.3-.2-.6-.3zM16 4C9.400 4 4 9.400 4 16c0 2.100.6 4.200 1.600 6L4 28l6.200-1.600c1.700.9 3.700 1.500 5.800 1.500 6.600 0 12-5.400 12-12S22.600 4 16 4zm0 21.800c-1.900 0-3.700-.5-5.200-1.500l-.4-.2-3.700 1 1-3.600-.2-.4c-1-1.600-1.500-3.400-1.500-5.200C6 10.500 10.500 6 16 6s10 4.500 10 10-4.500 9.800-10 9.800z"/></svg>
+  </a>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lightbox__close" id="lbClose" aria-label="Close">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous">‹</button>
+    <figure>
+      <img id="lbImg" src="" alt="" />
+      <figcaption><span id="lbCount"></span> · <a href="#" id="lbWa" target="_blank" rel="noopener">Ask about this piece on WhatsApp</a></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next">›</button>
+  </div>
+
+<!--------------- <script src="script.js"></script> -------->
+<script>
+  /* =========================================================
+   Zaza Blush & Bows – Landing page scripts
+   ---------------------------------------------------------
+   EDIT THESE 3 SETTINGS:
+   ========================================================= */
+const WHATSAPP_NUMBER = "2348101354192";      // country code + number, no "+" or spaces
+const TOTAL_IMAGES    = 17;                    // how many photos are in /images (images/1.jpg through images/17.jpg)
+const IMAGE_PATH      = (n) => `images/${n}.jpeg`; // images/1.jpg ... images/19.jpg
+const AUTOPLAY_MS     = 4500;                  // time per slide
+
+/* ========================================================= */
+const DEFAULT_MSG = "Hi Zaza Blush & Bows! 🎀 I'd love to place an order.";
+const waLink = (msg = DEFAULT_MSG) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+const pad = (n) => String(n).padStart(2, "0");
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const images = Array.from({ length: TOTAL_IMAGES }, (_, i) => IMAGE_PATH(i + 1));
+
+/* ---------- Missing-image fallback ---------- */
+document.addEventListener("error", (e) => {
+  if (e.target.tagName === "IMG") {
+    e.target.style.display = "none";
+    e.target.parentElement.classList.add("img-missing");
+  }
+}, true);
+
+/* ---------- WhatsApp links ---------- */
+$$(".js-wa").forEach((a) => {
+  a.href = waLink(a.dataset.msg || DEFAULT_MSG);
+  a.target = "_blank";
+  a.rel = "noopener";
+});
+
+/* ---------- Year ---------- */
+$("#year").textContent = new Date().getFullYear();
+
+/* ---------- Nav ---------- */
+const nav = $("#nav");
+const navLinks = $("#navLinks");
+const navToggle = $("#navToggle");
+const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
+onScroll();
+window.addEventListener("scroll", onScroll, { passive: true });
+
+const setMenu = (open) => {
+  navLinks.classList.toggle("open", open);
+  navToggle.classList.toggle("open", open);
+  navToggle.setAttribute("aria-expanded", open);
+  document.body.style.overflow = open ? "hidden" : "";
+};
+navToggle.addEventListener("click", () => setMenu(!navLinks.classList.contains("open")));
+$$("a", navLinks).forEach((a) => a.addEventListener("click", () => setMenu(false)));
+
+// Close the mobile menu with Escape or when the user taps outside it.
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && navLinks.classList.contains("open")) {
+    setMenu(false);
+    navToggle.focus();
+  }
+});
+document.addEventListener("click", (e) => {
+  if (!navLinks.classList.contains("open")) return;
+  if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) setMenu(false);
+});
+
+// If the viewport grows back to desktop size, reset mobile-menu state.
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 960 && navLinks.classList.contains("open")) setMenu(false);
+});
+
+/* ---------- Falling petals ---------- */
+(() => {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const wrap = $("#petals");
+  for (let i = 0; i < 16; i++) {
+    const p = document.createElement("i");
+    p.className = "petal";
+    p.style.left = Math.random() * 100 + "%";
+    p.style.setProperty("--s", 10 + Math.random() * 14 + "px");
+    p.style.setProperty("--t", 9 + Math.random() * 10 + "s");
+    p.style.setProperty("--dl", -Math.random() * 14 + "s");
+    p.style.setProperty("--x", (Math.random() * 160 - 80) + "px");
+    wrap.appendChild(p);
+  }
+})();
+
+/* ---------- Hero image slider ---------- */
+(() => {
+  const slider = $("#slider");
+  const track = $("#sliderTrack");
+  const thumbs = $("#thumbs");
+  const bar = $("#progress");
+  const curNum = $("#curNum");
+  const playBtn = $("#playBtn");
+  $("#totNum").textContent = pad(TOTAL_IMAGES);
+  bar.parentElement.style.setProperty("--dur", AUTOPLAY_MS + "ms");
+  bar.style.setProperty("--dur", AUTOPLAY_MS + "ms");
+
+  images.forEach((src, i) => {
+    const slide = document.createElement("div");
+    slide.className = "slide";
+    slide.setAttribute("aria-hidden", "true");
+    const img = new Image();
+    img.src = src;
+    img.alt = `Zaza Blush & Bows look ${i + 1}`;
+    img.loading = i < 2 ? "eager" : "lazy";
+    img.decoding = "async";
+    slide.appendChild(img);
+    track.appendChild(slide);
+
+    const t = document.createElement("button");
+    t.className = "thumb";
+    t.setAttribute("role", "tab");
+    t.setAttribute("aria-label", `Go to image ${i + 1}`);
+    const ti = new Image();
+    ti.src = src; ti.alt = ""; ti.loading = "lazy";
+    t.appendChild(ti);
+    t.addEventListener("click", () => { go(i); restart(); });
+    thumbs.appendChild(t);
+  });
+
+  const slides = $$(".slide", track);
+  const thumbEls = $$(".thumb", thumbs);
+  let index = 0, timer = null, playing = true, hovering = false;
+
+  function go(i) {
+    slides[index].classList.remove("active");
+    slides[index].setAttribute("aria-hidden", "true");
+    thumbEls[index].classList.remove("active");
+    thumbEls[index].setAttribute("aria-selected", "false");
+
+    index = (i + slides.length) % slides.length;
+
+    slides[index].classList.add("active");
+    slides[index].setAttribute("aria-hidden", "false");
+    thumbEls[index].classList.add("active");
+    thumbEls[index].setAttribute("aria-selected", "true");
+    curNum.textContent = pad(index + 1);
+
+    // keep active thumb in view (horizontal only)
+    const t = thumbEls[index];
+    thumbs.scrollTo({ left: t.offsetLeft - thumbs.clientWidth / 2 + t.clientWidth / 2, behavior: "smooth" });
+
+    // preload next
+    const next = slides[(index + 1) % slides.length].querySelector("img");
+    if (next) next.loading = "eager";
+  }
+
+  function runBar() {
+    bar.classList.remove("run");
+    void bar.offsetWidth; // restart animation
+    bar.classList.add("run");
+    bar.classList.toggle("paused", !playing || hovering);
+  }
+  function schedule() {
+    clearTimeout(timer);
+    if (!playing || hovering || document.hidden) return;
+    timer = setTimeout(() => { go(index + 1); runBar(); schedule(); }, AUTOPLAY_MS);
+  }
+  function restart() { runBar(); schedule(); }
+
+  $("#next").addEventListener("click", () => { go(index + 1); restart(); });
+  $("#prev").addEventListener("click", () => { go(index - 1); restart(); });
+
+  playBtn.addEventListener("click", () => {
+    playing = !playing;
+    playBtn.textContent = playing ? "❚❚" : "▶";
+    playBtn.setAttribute("aria-label", playing ? "Pause slideshow" : "Play slideshow");
+    playing ? restart() : (clearTimeout(timer), bar.classList.add("paused"));
+  });
+
+  // pause on hover (restart the countdown cleanly when leaving)
+  slider.addEventListener("mouseenter", () => { hovering = true; clearTimeout(timer); bar.classList.add("paused"); });
+  slider.addEventListener("mouseleave", () => { hovering = false; if (playing) restart(); });
+  document.addEventListener("visibilitychange", () => { document.hidden ? clearTimeout(timer) : (playing && restart()); });
+
+  // keyboard
+  slider.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { go(index + 1); restart(); }
+    if (e.key === "ArrowLeft") { go(index - 1); restart(); }
+  });
+
+  // swipe
+  let sx = 0, sy = 0;
+  slider.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
+  slider.addEventListener("touchend", (e) => {
+    const dx = e.changedTouches[0].clientX - sx;
+    const dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) { go(index + (dx < 0 ? 1 : -1)); restart(); }
+  }, { passive: true });
+
+  go(0);
+  restart();
+})();
+
+/* ---------- Gallery + lightbox ---------- */
+(() => {
+  const gallery = $("#gallery");
+  const lb = $("#lightbox");
+  const lbImg = $("#lbImg");
+  const lbCount = $("#lbCount");
+  const lbWa = $("#lbWa");
+  let current = 0;
+
+  images.forEach((src, i) => {
+    const b = document.createElement("button");
+    b.className = "gallery__item reveal";
+    b.style.setProperty("--d", (i % 4) * 0.08 + "s");
+    b.setAttribute("aria-label", `Open image ${i + 1}`);
+    const img = new Image();
+    img.src = src; img.alt = `Zaza Blush & Bows piece ${i + 1}`; img.loading = "lazy"; img.decoding = "async";
+    b.appendChild(img);
+    b.addEventListener("click", () => open(i));
+    gallery.appendChild(b);
+  });
+
+  function show(i) {
+    current = (i + images.length) % images.length;
+    lbImg.src = images[current];
+    lbImg.alt = `Zaza Blush & Bows piece ${current + 1}`;
+    lbCount.textContent = `${pad(current + 1)} / ${pad(images.length)}`;
+    lbWa.href = waLink(`Hi Zaza Blush & Bows! 🎀 I'm interested in the piece on photo ${current + 1} from your lookbook. Is it available?`);
+  }
+  function open(i) {
+    show(i);
+    lb.classList.add("open");
+    lb.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    $("#lbClose").focus();
+  }
+  function close() {
+    lb.classList.remove("open");
+    lb.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+  $("#lbClose").addEventListener("click", close);
+  $("#lbPrev").addEventListener("click", () => show(current - 1));
+  $("#lbNext").addEventListener("click", () => show(current + 1));
+  lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
+  document.addEventListener("keydown", (e) => {
+    if (!lb.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowRight") show(current + 1);
+    if (e.key === "ArrowLeft") show(current - 1);
+  });
+  let sx = 0;
+  lb.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener("touchend", (e) => {
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+})();
+
+/* ---------- Scroll reveal + counters ---------- */
+(() => {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add("in");
+      io.unobserve(en.target);
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  $$(".reveal").forEach((el) => io.observe(el));
+
+  const counters = $$("[data-count]");
+  const co = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      const el = en.target, end = +el.dataset.count, suffix = el.dataset.suffix || "";
+      const start = performance.now(), dur = 1600;
+      const tick = (now) => {
+        const p = Math.min((now - start) / dur, 1);
+        el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      co.unobserve(el);
+    });
+  }, { threshold: 0.6 });
+  counters.forEach((c) => co.observe(c));
+})();
+
+</script>
+</body>
+</html>
